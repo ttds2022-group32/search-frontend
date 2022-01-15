@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Frontend for TTDS
+
+Striving to look like this:
+![](https://miro.medium.com/max/1400/1*miJz9l7HAoEajCneYGffmg.jpeg)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
