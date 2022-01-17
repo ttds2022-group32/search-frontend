@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import List from './List';
+import Search from './Search';
+import Logo from './Logo'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <List />
-    <List />
-    <List />
-    <List />
+    <Logo />
+    <Search />
   </React.StrictMode>,
   document.getElementById('root')
 );
