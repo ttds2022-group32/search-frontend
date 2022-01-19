@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
 import List from './List';
 
@@ -28,18 +28,19 @@ const Search = (props) => {
     }
 
     return (
-        <div className='bg-zinc-200 h-[100vh] w-[100vw]'>
-            <div className='absolute inset-60'>
-                <input value={searchTerms} onChange={handleChange} className='w-[400px] h-[50px] rounded-l-full shadow-lg shadow-zinc-300 outline-none
-                font-thin text-xl px-4' placeholder='book name; author; published year...'></input>
-                <button onClick={addSearch} className='h-[50px] w-[100px] bg-zinc-400 rounded-r-full text-xl font-thin
-                shadow-lg shadow-zinc-300 text-white hover:bg-zinc-500'>Search</button>
-
-                {results && <List results={results} />}
+        <div className='bg-zinc-200'>
+            <div className='flex justify-center items-center h-[200px]'>
+                    <input value={searchTerms} onChange={handleChange} className='w-[480px] h-[50px] rounded-l-full shadow-lg shadow-zinc-300 outline-none
+                    font-thin text-xl px-4' placeholder='book name; author; published year...'></input>
+                    <button onClick={addSearch} className='h-[50px] w-[100px] bg-zinc-400 rounded-r-full text-xl font-bold
+                    shadow-lg shadow-zinc-300 text-white hover:bg-zinc-500'>Search</button>
+            </div> 
+            <div>
+                {<List results={results}/>}
             </div>
-
+            <div className='flex h-[50px]'>
+            </div>
         </div>
-
     )
 }
 
