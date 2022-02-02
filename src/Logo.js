@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 /**
  * @function Logo
  */
@@ -5,7 +6,7 @@
 function Logo() {
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
-            <img source="../public/logo192.png" alt="" className="w-full"/>
+            <img source="https://source.unsplash.com/random" alt="" className="w-full"/>
         </div>
     )
 }
