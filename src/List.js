@@ -6,6 +6,28 @@ import Item from './Item'
  */
 const List = (props) => {
 
+  const data = props.results  
+  var booklist = []
+  for (var d in data) {
+    booklist.push(data[d])
+  }
+
+  //console.log(booklist)
+
+  return (
+    <div className="container mx-auto">
+      <div className="flex flex-col gap-y-3">
+        {booklist.map(book=>(
+          <Item key={book.book_id} title={book.title} year={book.year} author={book.author} content={book.content} image={book.image_src}/>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default List;
+
+  /*
   const notes = [{"title":"Knack ...and How to Get It, The","author":"Fredek","year":1958,"content":"Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.","image":"http://dummyimage.com/143x100.png/cc0000/ffffff"},
   {"title":"Two English Girls (Les deux anglaises et le continent)","author":"Cinderella","year":2009,"content":"Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.","image":"http://dummyimage.com/103x100.png/ff4444/ffffff"},
   {"title":"Playing for Keeps","author":"Sinclare","year":2011,"content":"Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.","image":"http://dummyimage.com/238x100.png/5fa2dd/ffffff"},
@@ -26,16 +48,4 @@ const List = (props) => {
   {"title":"Ponette","author":"Wilona","year":2005,"content":"Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.","image":"http://dummyimage.com/226x100.png/5fa2dd/ffffff"},
   {"title":"St. Valentine's Day Massacre, The","author":"Kippy","year":2004,"content":"Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.","image":"http://dummyimage.com/102x100.png/cc0000/ffffff"},
   {"title":"Ain't Them Bodies Saints","author":"Ky","year":2001,"content":"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.","image":"http://dummyimage.com/102x100.png/5fa2dd/ffffff"}]
-
-  return (
-    <div className="container mx-auto">
-      <div className="flex flex-col gap-y-3">
-        {notes.map(book=>(
-          <Item key={book.title} title={book.title} author={book.author} year={book.year} content={book.content} image={book.image}/>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-export default List;
+*/
