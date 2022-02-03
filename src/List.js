@@ -18,7 +18,7 @@ const List = (props) => {
     <div className="container mx-auto">
       <div className="flex flex-col gap-y-3">
         {booklist.map(book=>(
-          <Item key={book.book_id} title={book.title} year={book.year} author={book.author} content={book.content} image={book.image_src}/>
+          <Item key={book._id} title={book.title} year={book.year} author={book.author} content={book.content} image={book.image_src}/>
         ))}
       </div>
     </div>
