@@ -14,7 +14,7 @@ const Search = (props) => {
         event.preventDefault()
         console.log('button clicked', searchTerms)
         axios
-            .post("http://localhost:8080/", searchTerms)
+            .get("http://localhost:8000/search/test?query="+searchTerms)
             .then(response => {
                 console.log(response)
                 setResults(response.data)
