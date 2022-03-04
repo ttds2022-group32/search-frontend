@@ -41,15 +41,14 @@ const Search = (props) => {
     }
 
     return (
-        <div className='bg-zinc-200'>
-            <div className='flex justify-center items-center h-[200px]'>
+        <div className='bg-gradient-to-r from-cyan-700'>
+            <div className='flex justify-center items-center h-[300px]'>
                 <input value={searchTerms} onKeyDown={handleKeyDown} onChange={handleChange} className='w-[480px] h-[50px] rounded-l-full shadow-lg shadow-zinc-300 outline-none
                     font-thin text-xl px-4' placeholder='quote; book name; author; published year...'></input>
-                <button onClick={addSearch} className='h-[50px] w-[100px] bg-zinc-400 rounded-r-full text-xl font-bold
-                    shadow-lg shadow-zinc-300 text-white hover:bg-zinc-500'>Search</button>
+                <button onClick={addSearch} className='h-[50px] w-[100px] bg-sky-600 rounded-r-full text-xl font-bold
+                    shadow-lg shadow-zinc-300 text-white hover:bg-sky-800'>Search</button>
             </div>
             <Results results={results} />
-
         </div>
     )
 }
