@@ -14,7 +14,7 @@ const Search = (props) => {
         event.preventDefault()
         console.log('button clicked', searchTerms)
         axios
-            .get("http://localhost:8000/search/?query="+searchTerms)
+            .get("http://35.233.44.34:80/search/?query="+searchTerms)
             .then(response => {
                 console.log(response)
                 console.log("Data:"+response.data)
@@ -27,7 +27,7 @@ const Search = (props) => {
         event.preventDefault()
         console.log('button clicked', searchTerms)
         axios
-            .get("http://localhost:8000/solid_search/?query="+searchTerms)
+            .get("http://35.233.44.34:80/solid_search/?query="+searchTerms)
             .then(response => {
                 console.log(response)
                 console.log("Data:"+response.data)
@@ -41,7 +41,7 @@ const Search = (props) => {
             event.preventDefault()
             console.log("press Enter", searchTerms)
             axios
-            .post("http://localhost:8080/", searchTerms)
+            .get("http://35.233.44.34:80/", searchTerms)
             .then(response =>{
                 console.log("response is", response)
                 setResults(response.data)

@@ -9,13 +9,13 @@ const Item = (props) => {
                 </div>
                 <div className="col-span-3">
                     <div className="text-xl font-bold text-black mb-2">
-                        <a href={"127.0.0.1:8000/book/?book_id="+props.key}>{props.title}</a>
+                        <a href={"127.0.0.1:8000/book/?book_id="/*+props.key*/}>{props.title}</a>
                     </div>
                     <ul>
                         <li>
                             <a href={"http://127.0.0.1:8000/book/?book_id=11"}>HTML</a>
                             <strong>Author: </strong>
-                            {props.author}
+                            {props.author.name}
                         </li>
                         <li>
                             <strong>Published Year: </strong>
