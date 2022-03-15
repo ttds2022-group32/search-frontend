@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Results from './Results';
+import pic from "./images/logo_pic.jpg"
 
 /**
  * @function Search
@@ -53,6 +54,7 @@ const Search = (props) => {
         <div>
             <div className='bg-gradient-to-r from-cyan-700'>
                 <div className='flex justify-center items-center h-[300px]'>
+                    <img src={pic} alt ="" />
                     <input value={searchTerms} onChange={handleChange} className='w-[480px] h-[50px] rounded-l-full shadow-lg shadow-zinc-300 outline-none
                         font-thin text-xl px-4' placeholder='quote; book name; author; published year...'></input>
                     <button onClick={addSearch} className='h-[50px] w-[100px] bg-sky-600 rounded-r-full text-xl font-bold
