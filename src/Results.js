@@ -2,7 +2,7 @@ import List from './List'
 
 const Results = ({results}) => {
     if (!results){
-        return <h1 className="font-bold flex justify-center items-center text-[42px]"> Boogle</h1>
+        return <h1 className="font-bold flex justify-center items-center text-[42px]"> </h1>
     }else if (results === "None"){
         return (
             <div>

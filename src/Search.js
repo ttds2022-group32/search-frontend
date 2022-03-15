@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Results from './Results';
-import pic from "./images/logo_pic.jpg"
+import boogle from "./images/Boogle.jpg";
+import logo from "./images/logo_pic.png"
+
 
 /**
  * @function Search
@@ -52,9 +54,13 @@ const Search = (props) => {
     let change = results && results["expand"] && results["expand"] !== results["original"]
     return (
         <div>
-            <div className='bg-gradient-to-r from-cyan-700'>
-                <div className='flex justify-center items-center h-[300px]'>
-                    <img src={pic} alt ="" />
+            <div className='flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700'>
+            <div className="flex">
+                <img src={boogle} alt = "" width="150"/>
+                
+            </div>
+            <img src={logo} alt ="" width="500"/>
+                <div className='flex justify-center items-center-top h-[150px]'>
                     <input value={searchTerms} onChange={handleChange} className='w-[480px] h-[50px] rounded-l-full shadow-lg shadow-zinc-300 outline-none
                         font-thin text-xl px-4' placeholder='quote; book name; author; published year...'></input>
                     <button onClick={addSearch} className='h-[50px] w-[100px] bg-sky-600 rounded-r-full text-xl font-bold
