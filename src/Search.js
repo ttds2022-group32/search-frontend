@@ -44,6 +44,11 @@ const Search = (props) => {
         setSearchTerms(event.target.value)
     }
 
+    var expand_query = results && results["expand"] ? results["expand"] : undefined
+    var original_query = results && results["expand"] ? results["original"] : undefined
+    console.log(expand_query)
+    console.log(original_query)
+    let change = results && results["expand"] && results["expand"] !== results["original"]
     return (
         <div>
             <div className='bg-gradient-to-r from-cyan-700'>
@@ -54,8 +59,12 @@ const Search = (props) => {
                         shadow-lg shadow-zinc-300 text-white hover:bg-sky-800'>Search</button>
                 </div>
             </div>
-            {results && results["expand"] ? <h3>You mean {results["expand"]}</h3>:undefined}
-            {results && results["expand"] ? <h3>If you feel Sick then <button onClick={solid_Search}>{results["original"]}</button></h3>: undefined}
+            
+            {change ? <div>
+                    <div className= 'text-xl'>Showing results for  <b>{results["expand"]}</b></div>
+                    <div>Search instead for <button className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" onClick={solid_Search}>{results["original"]}</button></div>
+                </div> : undefined
+            }
             <Results results={results} />
         </div>
     )

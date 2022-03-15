@@ -20,7 +20,7 @@ const List = (props) => {
   return (
     <div className="container mx-auto">
       <div className="flex flex-col gap-y-3">
-        {booklist.map(book=>(
+        {booklist.filter(book=>(book._id)).map(book=>(
           <Item key={book._id} book={book.book_id} title={book.title} year={book.year} author={book.author} content={book.content} image={book.image_src}/>
         ))}
       </div>

@@ -11,7 +11,7 @@ const Item = (props) => {
                 </div>
                 <div className="col-span-3">
                     <div className="text-xl font-bold text-black mb-2">
-                        <a href={ip_address+"book/?book_id="+props.book}>{props.title}</a>
+                        <a className = "text-sky-800 hover:text-blue-800 visited:text-purple-600" href={ip_address+"book/?book_id="+props.book}>{props.title}</a>
                     </div>
                     <ul>
                         <li>
@@ -23,7 +23,7 @@ const Item = (props) => {
                             {props.year}
                         </li>
                         <li>
-                            <strong>Description: </strong>
+                            <strong>Content: </strong>
                             {props.content}
                         </li>
                     </ul>
