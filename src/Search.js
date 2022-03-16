@@ -15,20 +15,20 @@ const Search = (props) => {
     const [results, setResults] = useState()
     const [errors, setErrors] = useState()
 
-    const ip_address = "http://104.155.22.157:80/"
+    const ip_address = "http://35.195.142.184/"
 
     const addSearch = (event) => {
         event.preventDefault()
         console.log('button clicked', searchTerms)
         axios
-            .get(ip_address+"search/?query="+searchTerms)
-            .catch(function (error){
+            .get(ip_address + "search/?query=" + searchTerms)
+            .catch(function (error) {
                 console.log("We managed to catch this error", error.message)
                 setErrors(true)
             })
             .then(response => {
                 console.log(response)
-                console.log("Data:"+response.data)
+                console.log("Data:" + response.data)
                 setResults(response.data)
             })
 
@@ -38,14 +38,14 @@ const Search = (props) => {
         event.preventDefault()
         console.log('button clicked', searchTerms)
         axios
-            .get(ip_address+"solid_search/?query="+searchTerms)
-            .catch(function (error){
+            .get(ip_address + "solid_search/?query=" + searchTerms)
+            .catch(function (error) {
                 console.log("We managed to catch this error", error.message)
                 setErrors(true)
             })
             .then(response => {
                 console.log(response)
-                console.log("Data:"+response.data)
+                console.log("Data:" + response.data)
                 setResults(response.data)
             })
 
@@ -62,23 +62,23 @@ const Search = (props) => {
     console.log(expand_query)
     console.log(original_query)
     let change = results && results["expand"] && results["expand"] !== results["original"]
-    if (errors){
+    if (errors) {
         return <div>
             <div className='flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700'>
-            <img src={notfound} alt = "" width="600"/>
+                <img src={notfound} alt="" width="600" />
             </div>
             <div className="absolute bottom-0 left-0">
-            <img src={copyright404} alt = "" width="300"/>
+                <img src={copyright404} alt="" width="300" />
             </div>
         </div>
     }
     return (
         <div>
             <div className='flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700'>
-            <div className="flex">
-                <img src={boogle} alt = "" width="150"/>
-            </div>
-            <img src={logo} alt ="" width="500"/>
+                <div className="flex">
+                    <img src={boogle} alt="" width="150" />
+                </div>
+                <img src={logo} alt="" width="500" />
                 <div className='flex justify-center items-center-top h-[150px]'>
                     <input value={searchTerms} onChange={handleChange} className='w-[480px] h-[50px] rounded-l-full shadow-lg shadow-zinc-300 outline-none
                         font-thin text-xl px-4' placeholder='quote; book name; author...'></input>
@@ -87,9 +87,9 @@ const Search = (props) => {
                 </div>
             </div>
             {change ? <div>
-                    <div className= 'text-xl'>Showing results for  <b>{results["expand"]}</b></div>
-                    <div>Search instead for <button className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" onClick={solid_Search}>{results["original"]}</button></div>
-                </div> : undefined
+                <div className='text-xl'>Showing results for  <b>{results["expand"]}</b></div>
+                <div>Search instead for <button className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" onClick={solid_Search}>{results["original"]}</button></div>
+            </div> : undefined
             }
             <Results results={results} />
         </div>
