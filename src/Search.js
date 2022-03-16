@@ -67,6 +67,9 @@ const Search = (props) => {
             <div className='flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700'>
             <img src={notfound} alt = "" width="600"/>
             </div>
+            <div  className='flex flex-col justify-center items-center'>
+                <div className= 'text-xl'><b>Please refresh the page or go back</b></div>
+            </div>
             <div className="absolute bottom-0 left-0">
             <img src={copyright404} alt = "" width="300"/>
             </div>
