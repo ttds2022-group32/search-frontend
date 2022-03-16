@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ip_address =  "http://104.155.22.157:80/"
+const ip_address = "http://35.195.142.184/"
 
 const Item = (props) => {
     return (
@@ -11,7 +11,7 @@ const Item = (props) => {
                 </div>
                 <div className="col-span-4">
                     <div className="text-xl font-bold text-black mb-2">
-                        <a className = "text-sky-800 hover:text-blue-800 visited:text-purple-600" href={ip_address+"book/?book_id="+props.book}>{props.title}</a>
+                        <a className="text-sky-800 hover:text-blue-800 visited:text-purple-600" href={ip_address + "book/?book_id=" + props.book}>{props.title}</a>
                     </div>
                     <ul>
                         <li>
