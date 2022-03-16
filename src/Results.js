@@ -1,4 +1,5 @@
 import List from './List'
+import copyright from "./images/copyright.jpg"
 
 const Results = ({results}) => {
     if (!results){
@@ -11,7 +12,15 @@ const Results = ({results}) => {
             </div>
         )
     }else {
-        return <List results={results}/>
+        return (<div>
+            <List results={results}/>
+            <div className="flex bottom-0 left-0">
+                <img src={copyright} alt = "" width="200"/>
+            </div>
+        </div>
+        
+        )
+        
     }
     
 }

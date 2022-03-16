@@ -3,7 +3,8 @@ import axios from 'axios';
 import Results from './Results';
 import boogle from "./images/Boogle.jpg";
 import logo from "./images/logo_pic.jpg";
-import notfound from "./images/404.jpg"
+import notfound from "./images/404.jpg";
+import copyright404 from "./images/404_copyright.jpg"
 
 /**
  * @function Search
@@ -66,6 +67,9 @@ const Search = (props) => {
             <div className='flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700'>
             <img src={notfound} alt = "" width="600"/>
             </div>
+            <div className="absolute bottom-0 left-0">
+            <img src={copyright404} alt = "" width="300"/>
+            </div>
         </div>
     }
     return (
@@ -73,12 +77,11 @@ const Search = (props) => {
             <div className='flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700'>
             <div className="flex">
                 <img src={boogle} alt = "" width="150"/>
-                
             </div>
             <img src={logo} alt ="" width="500"/>
                 <div className='flex justify-center items-center-top h-[150px]'>
                     <input value={searchTerms} onChange={handleChange} className='w-[480px] h-[50px] rounded-l-full shadow-lg shadow-zinc-300 outline-none
-                        font-thin text-xl px-4' placeholder='quote; book name; author; published year...'></input>
+                        font-thin text-xl px-4' placeholder='quote; book name; author...'></input>
                     <button onClick={addSearch} className='h-[50px] w-[100px] bg-sky-600 rounded-r-full text-xl font-bold
                         shadow-lg shadow-zinc-300 text-white hover:bg-sky-800'>Search</button>
                 </div>
