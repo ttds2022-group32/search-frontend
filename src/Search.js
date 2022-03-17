@@ -29,7 +29,7 @@ const Search = (props) => {
                 console.log(response)
                 console.log("Data:" + response.data)
                 setAuthor(response.data)
-                setSearchTerms(response.data[0])
+                // setSearchTerms(response.data[0])
             })
     }
     useEffect(getAuthor, [])
@@ -112,7 +112,7 @@ const Search = (props) => {
 
                 </div>
             </div>
-            {author && !buttonPressed ? <Author author={author} getAuthor={getAuthor} /> : undefined}
+            {author && !buttonPressed ? <Author author={author} getAuthor={getAuthor} setSearchTerms={setSearchTerms}/> : undefined}
             {!results && buttonPressed ? <Spinner /> : undefined}
             {change ? <div>
                 <div className='text-xl'>Showing results for  <b>{results["expand"]}</b></div>
@@ -135,13 +135,14 @@ const Spinner = () => {
     )
 }
 
-const Author = ({ author, getAuthor }) => {
+const Author = ({ author, getAuthor,setSearchTerms }) => {
     return (
         <div class="flex-col justify-center items-center m-5 p-4 text-gray-800 bg-white rounded-lg shadow">
             <div class="mb-2">
                 <div class="h-3 text-5xl text-left text-gray-600">“</div>
                 <p class="px-4 text-xl text-center text-gray-600 mx-5">
-                    Try searching for <a href={author[1]} target="_blank" className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">{author[0]}</a>
+                    Try searching for <button onClick={() => {setSearchTerms(author[0])}} target="_blank" className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">{author[0]}</button> 
+                    ; or know more on <a href={author[1]} target="_blank" className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">wikipedia</a>
                 </p>
 
                 <div class="h-3 text-5xl text-right text-gray-600">”</div>
